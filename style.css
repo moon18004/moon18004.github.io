@@ -1,6 +1,9 @@
 /* font-family: 'Fira Code', monospace;
 font-family: 'Trispace', sans-serif; */
 /* font-family: 'Monoton', cursive; */
+
+/* XEION CDN */
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
 /* Fontawesome 4.7 */
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
@@ -58,23 +61,28 @@ header{
   position:fixed;
   width: 100%;
   z-index:10;
+  transition: 0.5s;
+  margin: 0;
+}
+header.dark{
+
+  background-color: #211f1fd8;
 }
 .header-inner{
-  width: 100%;
-  padding: 30px 8% 15px 8%;
-  /* padding-top: 30px;
-  padding-bottom: 15px; */
+  margin: auto;
+  width: 1300px;
+  
+  padding-top: 22px;
+  padding-bottom: 15px;
   display:flex;
   justify-content: space-between;
   transition: 0.3s;
 }
 .header-inner.dark{
-  /* background-color: rgba(0, 0, 0, 0.736); */
-  background-color: #211f1fd8;
-  /* background:url('images/bg2.jpg') center/cover repeat; */
-  /* opacity:0.85; */
-  padding: 20px 9% 15px 9%;
-  box-shadow: 0 0 4px #100f0f;
+  /* background-color: #211f1fd8; */
+  /* padding: 20px 9% 15px 9%; */
+  padding: 25px 8px 15px 8px;
+  /* box-shadow: 0 0 4px #100f0f; */
 }
 .logo{
   color: var(--color-white);
@@ -209,7 +217,7 @@ header{
 .aboutMe{
   flex:1;
   padding-right: 20px;
-  animation: ltr 1s linear both;
+  animation: ltr 0.5s linear both;
 }
 .aboutMe p{
   margin-top:0;
@@ -225,7 +233,7 @@ header{
 }
 .experiences{
   padding-left: 60px;
-  animation: rtl 1s linear both;
+  animation: rtl 0.5s linear both;
 }
 .experiences h3{
   color: var(--color-white);
@@ -284,7 +292,7 @@ header{
   padding-top: 180px;
   padding-bottom: 40px;
   grid-template-columns: 1fr 1fr 1fr;
-  animation: utd 1s linear both;
+  animation: utd 0.5s linear both;
 
 }
 .skill{
@@ -369,7 +377,7 @@ header{
 }
 .ui-menu{
   margin-left: 20px;
-  animation: ltr 1s linear both;
+  
 }
 .ui-menu .active{
   color: var(--color-green);
@@ -410,7 +418,7 @@ header{
   height: 320px;
   padding-top: 10px;
   opacity: 0;
-  animation: rtl 1s linear both;
+  animation: rtl 0.5s linear both;
 
 }
 .ui-items{
@@ -536,7 +544,7 @@ header{
   position:relative;
   margin-right: 100px;
   border-radius:20px;
-  animation: ltr 1s linear both;
+  animation: ltr 0.5s linear both;
 }
 
 .works__slider{
@@ -804,5 +812,278 @@ footer{
   100%{
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ------------- Mobile View ------------------- */
+@media (max-width: 768px){
+  .home__container, .about__container, .skills__container, .ui__container, .works__container{
+    width: 100%;
+  }
+  /* ------------------ Header Mobile ---------------- */
+  .header-inner {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    padding-top: 15px;
+    padding-bottom:10px;
+  }
+  .header-inner.dark{
+    padding-top: 15px;
+    padding-bottom: 10px;
+  }
+  .logo {
+    float: right;
+    margin-right: 20px;
+    /* padding-bottom: 20px; */
+    font-size: 16px;
+  }
+  .menu {
+    float: none;
+    background-color: #211f1fd8;
+    position: fixed;
+    height: 100vh;
+    width: 250px;
+    top: 0;
+    left: -270px;
+    box-shadow: 3px 0 3px rgba(0, 0, 0, 0.1);
+    padding-top: 70px;
+    padding-left: 15px;
+    transition: 0.5s;
+  }
+  .menu.active {
+    left: 0;
+  }
+  .menu a {
+    display: block;
+    font-size: 14px;
+  }
+  .menu a:before{
+    display: none;
+  }
+  /* Trigger */
+  .trigger {
+    /*border: 1px solid red;*/
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 28px;
+    text-align: center;
+    /*cursor: pointer;*/
+  }
+  .trigger:before {
+    content: '\e91c';
+    font-family: xeicon;
+  }
+  .trigger.active:before {
+    content: '\e9af';
+  }
+  /* ------------------ Home Mobile ----------------- */
+  #home{
+    height: 100%;
+    overflow:hidden;
+  }
+  .home__container{
+    height:  100%;
+    /* top: 100px; */
+    /* position: absolute; */
+    margin: 50px 10px 10px 0;
+  }
+  .home__contents{
+    float:none;
+    width: 100%;
+    position: relative;
+    height: 240px;
+    left:0;
+    padding: 8px;
+  }
+  .home__contents h1{
+    font-size: 36px;
+  }
+  .home__contents h2{
+    font-size: 16px;
+  }
+  .home__photo{
+    float:none;
+    width: 100%;
+    position: relative;
+  }
+  .home__photo img{
+    width: 100%;
+  }
+  /* ------------- about mobile- ------------------ */
+  #about{
+    padding-top: 40px;
+  }
+
+  .about__container h2{
+    margin-left: 20px;
+  }
+  .about__contents{
+    flex-direction: column;
+  }
+  .aboutMe{
+    padding: 10px;
+  }
+  .aboutMe p{
+    text-align:center;
+    font-size: 12px;
+  }
+  .experiences{
+    padding: 10px;
+  }
+  .experiences h3{
+    margin: auto;
+    text-align:center;
+  }
+  .experience-item{
+    text-align:center;
+  }
+  .experience-item p:last-child{
+    margin-bottom:0;
+  }
+  .experience-item p span{
+    display:block;
+  }
+   /*----------- skills Mobile ----------- */
+  .skills__container h2{
+    top:50px;
+  }
+   .skills__items{
+    display:flex;
+    flex-direction:column;
+    padding-top: 120px;
+  }
+  .skill:nth-child(1), .skill:nth-child(2), .skill:nth-child(4), .skill:nth-child(5){
+    border-right:none;
+  }
+  .skill{
+    border-bottom: 1px solid var(--color-white);
+  }
+  .skill p{
+    font-size: 12px;
+  }
+  /* --------------- UI Mobile ------------------ */
+  .ui__container h2{
+    margin-left: 20px;
+    padding-top: 40px;
+    margin-bottom: 40px;
+  }
+  .ui-inner{
+    flex-direction: column;
+    width: 100%;
+  }
+  .ui-menu{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ui-menu p{
+    margin: 0 10px;
+  }
+  .ui-contents{
+    height: 1200px;
+  }
+  .ui-items{
+    width: 100%;
+    position:absolute;
+    flex-direction: column;
+    margin: auto;
+  }
+  .ui-item{
+    width: 100%;
+    box-sizing:border-box;
+    margin:0px;
+    padding: 10px;
+    margin-bottom: 20px;
+
+  }
+  .ui-item div{
+    left: 10px;
+    bottom: -10px;
+  }
+  /* ------------------ Works Mobile ------------------ */
+  .works__container h2{
+    padding-top: 40px;
+  }
+  .work__inner{
+    padding-top: 120px;
+    flex-direction: column;
+  }
+  .works__items{
+    width: 100%;
+    height: 400px;
+  }
+  .works__item{
+    width: 100%;
+    height: 390px;
+  }
+  .works__slider{
+    width: 100%;
+  }
+  .work{
+    margin: 2px 6px;
+  }
+  .work img{
+    width: 100%;
+  }
+  .work h3{
+    margin-bottom: 10px;
+  }
+  .contents{
+    margin-top: 16px;
+  }
+  .background{
+    bottom : 70px;
+  }
+  .background h1{
+    font-size: 60px;
+  }
+  .work__inner .btn{
+    padding: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+  }
+  .btn p{
+    margin: 10px;
+    padding: 0;
+  }
+  .btn p:after{
+    display: none;
+  }
+
+  /* ------------- bottom Mobile ------------------ */
+  #bottom{
+    width: 100%;
+    margin-top: 40px;
+  }
+  #bottom p{
+    font-size: 12px;
+    margin: 12px;
+  }
+  footer{
+    font-size: 12px;
+  }
+
+
+  .socials{
+    position: relative;
+    /* display: none; */
+    width: 100%;
+    left:0;
+  }
+  .socials div{
+    display: flex;
+    justify-content: center;
+  }
+  .socials div a{
+    margin: 8px;
+  }
+  .socials:after{
+    display: none;
+  }
   }
 }

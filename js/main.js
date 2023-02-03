@@ -1,13 +1,16 @@
 'use strict';
-const navbar = document.querySelector('.header-inner');
+const navbar = document.querySelector('header');
+const menu = document.querySelector('.header-inner');
 const navbarHeight = navbar.getBoundingClientRect().height;
 console.log(navbarHeight);
 document.addEventListener('scroll', ()=>{
   if(window.scrollY>navbarHeight){
       navbar.classList.add('dark');
+      menu.classList.add('dark');
   }
   else{
       navbar.classList.remove('dark');
+      menu.classList.remove('dark');
   }
 })
 // Make home slowly fade to transparent as the window scrolls down
@@ -54,6 +57,12 @@ document.addEventListener('click', (e)=>{
     uiItems.forEach(element=> element.classList.remove('active'));
     const data = e.target.getAttribute('data-alt');
     document.getElementById(data).classList.add('active');
+    if (data == 'tab4'){
+      document.querySelector('.ui-contents').style.height = "800px";
+    }
+    else{
+      document.querySelector('.ui-contents').style.height = "1200px";
+    }
   }
 })
 
@@ -66,16 +75,32 @@ document.addEventListener('click', (e)=>{
     work_tab.forEach(element=> element.classList.remove('active'));
     e.target.classList.add('active');
     const data = e.target.getAttribute('data-alt');
+
+    // const ws = document.querySelector('.works__slider')[0];
+    console.log(getComputedStyle(workSlider).width);
+    if (getComputedStyle(workSlider).width > 768){
+      if(data=="work-tab1"){
+        workSlider.style.top = "0";
+      }
+      else if(data=="work-tab2"){
+        workSlider.style.top = "-640px";
+      }
+      else if(data=="work-tab3"){
+        workSlider.style.top = "-1280px";
+      }
+    }
+    else{
+      if(data=="work-tab1"){
+        workSlider.style.top = "0";
+      }
+      else if(data=="work-tab2"){
+        workSlider.style.top = "-400px";
+      }
+      else if(data=="work-tab3"){
+        workSlider.style.top = "-800px";
+      }
+    }
     
-    if(data=="work-tab1"){
-      workSlider.style.top = "0";
-    }
-    else if(data=="work-tab2"){
-      workSlider.style.top = "-640px";
-    }
-    else if(data=="work-tab3"){
-      workSlider.style.top = "-1280px";
-    }
     
   }
 })
@@ -90,8 +115,17 @@ const wow = new WOW(
   {
   boxClass:     'wow',      // default
   mobile:       true,       // default
-  offset:       200,        
+  offset:       150,        
   live:         true        // default
 }
 )
 wow.init();
+
+/* Header Trigger */
+$('.trigger').click(function(){
+  $(this).toggleClass('active')
+  $('.menu').toggleClass('active')
+})
+$('.menu a, section').click(function(){
+  $('.menu, .trigger').removeClass('active')
+})
