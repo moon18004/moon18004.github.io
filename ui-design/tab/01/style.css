@@ -1,0 +1,107 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+body{
+  display:flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+
+}
+.container input{
+  display:none;
+}
+.container{
+  width: 800px;
+  position:relative;
+  height: 600px;
+  /* border: 1px solid #eee; */
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px #ccc;
+  padding:20px;
+}
+.container h1:nth-child(5){
+  color:crimson;
+}
+h1{
+  text-align:center;
+}
+.btn{
+  display:flex;
+  justify-content: center;
+  
+}
+.btn label{
+  cursor: pointer;
+  margin: 8px;
+  width: 120px;
+}
+.btn img{
+  width: 120px;
+  filter: grayscale(1);
+  margin: 8px;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.contents{
+  position:relative;
+}
+.contents .content{
+  position:absolute;
+  top:0;
+  left:0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+/* .content.item1{
+  opacity:1;
+  visibility: visible;
+} */
+.content p{
+  text-align:center;
+}
+.content p:nth-child(2){
+  font-weight: bold;
+}
+input[id=tab1]:checked ~ .btn label[for=tab1] img{
+  border-radius: 50%;
+  filter:grayscale(0);
+}
+input[id=tab2]:checked ~ .btn label[for=tab2] img{
+  border-radius: 50%;
+  filter:grayscale(0);
+}
+input[id=tab3]:checked ~ .btn label[for=tab3] img{
+  border-radius: 50%;
+  filter:grayscale(0);
+}
+input[id=tab4]:checked ~ .btn label[for=tab4] img{
+  border-radius: 50%;
+  filter:grayscale(0);
+}
+input[id=tab1]:checked ~ .contents .content.item1{
+  opacity:1;
+  visibility: visible;
+  transition-delay:0.3s;
+}
+input[id=tab2]:checked ~ .contents .content.item2{
+  opacity:1;
+  visibility: visible;
+  transition-delay:0.3s;
+}
+input[id=tab3]:checked ~ .contents .content.item3{
+  opacity:1;
+  visibility: visible;
+  transition-delay:0.3s;
+}
+input[id=tab4]:checked ~ .contents .content.item4{
+  opacity:1;
+  visibility: visible;
+  transition-delay:0.3s;
+}
+

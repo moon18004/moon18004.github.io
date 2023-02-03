@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Accordion Contents Slide</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section>
+    <article>
+      <div class="heading">
+        <span>Accordion Contents Slide</span>
+        <h1><b>Sign up</b> with <em>KakaoTalk</e></h1>
+      </div>
+      <div class="content">
+        <div class="accordion">
+          <div class="title active" data-img="images/app-capture-01.png">Lorem ipsum dolor sit amet.</div>
+          <div class="desc active">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque blanditiis voluptatibus sint?
+            <br><br>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus explicabo similique voluptas laudantium sequi animi ea eos facilis numquam quas?
+          </div>
+          <div class="title" data-img="images/app-capture-02.png">Odio aenean sed adipiscing diam donec.</div>
+          <div class="desc">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas rem vel quod est veritatis voluptate, assumenda possimus facilis iure quis expedita eum! Deleniti, magnam.
+            <br><br>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem voluptate fuga ut!
+          </div>
+          <div class="title" data-img="images/app-capture-03.png">Urna porttitor rhoncus dolor purus non enim. </div>
+          <div class="desc">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt beatae voluptatum labore?
+            <br><br>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, optio asperiores. Sequi repudiandae totam repellat sit soluta velit! Modi rerum quia inventore labore reprehenderit, ex, quae eaque assumenda molestiae suscipit voluptate, tenetur fugit!
+          </div>
+          <div class="title" data-img="images/app-capture-04.png">Iaculis urna id volutpat lacus.</div>
+          <div class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit recusandae optio aperiam sunt deleniti officia omnis. Deleniti tempora quod facere!
+            <br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident laborum, aliquam deserunt consequatur sequi facilis nihil.
+          </div>
+        </div>
+        
+        <div class="image">
+          <img src="images/app-capture-01.png" alt="">
+        </div>
+      </div>
+    </article>
+  </section>
+  <script>
+    $('.title').click(function(){
+      $(this).addClass('active')
+      $(this).siblings('.title').removeClass('active')
+      $(this).siblings('.desc').stop().slideUp()
+      $(this).next().stop().slideDown()
+
+      const dataImg = $(this).attr('data-img')
+      
+      $('.image img').attr('src', dataImg)
+    })
+  </script>
+</body>
+</html>

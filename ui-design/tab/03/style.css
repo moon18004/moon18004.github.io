@@ -1,0 +1,95 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+body{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+}
+input[name=tabmenu]{
+  display:none;
+}
+
+.container{
+  width: 800px;
+  
+}
+.container h1 {
+  text-align:center;
+  margin-top: 0;
+}
+.cards{
+  overflow:hidden;
+  width: 800px;
+  height: 330px;
+  position:relative;
+}
+.slider{
+  box-sizing: border-box;
+  width: 2400px;
+  position: absolute;
+  top:0;
+  left:0;
+  transition: 0.5s;
+  /* font-size: 0; */
+}
+.card{
+  /* border: 1px solid black; */
+  box-sizing: border-box;
+  width: 800px;
+  /* display:inline-block; */
+  float:left;
+  
+}
+.card div{
+  margin: auto;
+  width: 100px;
+}
+.card div img{
+  border-radius: 50%;
+  width: 100%;
+}
+.card p{
+  text-align:center;
+  /* margin: 0;
+  padding:0; */
+}
+.card p:nth-child(3){
+  font-weight: bold;
+}
+.card p:nth-child(4) span{
+  color:orange;
+}
+.btn{
+  /* display:flex; */
+  text-align:center;
+}
+.btn label{
+  width: 15px;
+  height: 15px;
+  background-color: #ccc;
+  display:inline-block;
+  transition: 0.5s;
+  cursor: pointer;
+}
+input[id=tab1]:checked ~ .btn label[for=tab1],
+input[id=tab2]:checked ~ .btn label[for=tab2],
+input[id=tab3]:checked ~ .btn label[for=tab3]{
+  border-radius: 50%;
+  background-color: crimson;
+}
+input[id=tab1]:checked ~ .cards .slider{
+  left:0;
+}
+input[id=tab2]:checked ~ .cards .slider{
+  left:-800px;
+}
+input[id=tab3]:checked ~ .cards .slider{
+  left:-1600px;
+}
+
+
+
+
+
