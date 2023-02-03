@@ -78,7 +78,7 @@ document.addEventListener('click', (e)=>{
 
     // const ws = document.querySelector('.works__slider')[0];
     console.log(getComputedStyle(workSlider).width);
-    if (getComputedStyle(workSlider).width > 768){
+    if (getComputedStyle(workSlider).width > "768"){
       if(data=="work-tab1"){
         workSlider.style.top = "0";
       }
