@@ -58,10 +58,10 @@ document.addEventListener('click', (e)=>{
     const data = e.target.getAttribute('data-alt');
     document.getElementById(data).classList.add('active');
     if (data == 'tab4'){
-      document.querySelector('.ui-contents').style.height = "800px";
+      document.querySelector('.ui-contents').style.height = "750px";
     }
     else{
-      document.querySelector('.ui-contents').style.height = "1200px";
+      document.querySelector('.ui-contents').style.height = "1100px";
     }
   }
 })
