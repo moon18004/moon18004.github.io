@@ -19,9 +19,9 @@ const homeHeight = home.getBoundingClientRect().height;
 const homeContainer = document.querySelector('.home__container');
 document.addEventListener('scroll', ()=> {
     homeContainer.style.opacity= 1.2-window.scrollY/homeHeight;
-    console.log(window.scrollY);
-    console.log(homeHeight);
-    console.log(1.25-window.scrollY/homeHeight);  
+    // console.log(window.scrollY);
+    // console.log(homeHeight);
+    // console.log(1.25-window.scrollY/homeHeight);  
 })
 
 // Text animation
@@ -50,7 +50,8 @@ navbarMenu.addEventListener('click', (event)=>{
 
 // UI Tab
 const tab = document.querySelectorAll('.ui-menu p');
-const uiItems = document. querySelectorAll('.ui-items')
+const uiItems = document. querySelectorAll('.ui-items');
+const ui = document.querySelector('.ui__container');
 // console.log(uiItems);
 document.addEventListener('click', (e)=>{
   if(e.target.parentNode.className=='ui-menu'){
@@ -59,12 +60,18 @@ document.addEventListener('click', (e)=>{
     uiItems.forEach(element=> element.classList.remove('active'));
     const data = e.target.getAttribute('data-alt');
     document.getElementById(data).classList.add('active');
-    if (data == 'tab4'){
-      document.querySelector('.ui-contents').style.height = "750px";
+    // console.log(getComputedStyle(uir).width);
+    if(getComputedStyle(ui).width < "769"){
+      console.log(getComputedStyle(ui).width);
+      if (data == 'tab4'){
+        document.querySelector('.ui-contents').style.height = "750px";
+      }
+      else{
+        document.querySelector('.ui-contents').style.height = "1100px";
+      }
     }
-    else{
-      document.querySelector('.ui-contents').style.height = "1100px";
-    }
+    else{}
+    
   }
 })
 
@@ -81,6 +88,7 @@ document.addEventListener('click', (e)=>{
     // const ws = document.querySelector('.works__slider')[0];
     console.log(getComputedStyle(workSlider).width);
     if (getComputedStyle(workSlider).width > "768"){
+      // console.log("width > 768")
       if(data=="work-tab1"){
         workSlider.style.top = "0";
       }
@@ -92,6 +100,7 @@ document.addEventListener('click', (e)=>{
       }
     }
     else{
+      // console.log("width < 768")
       if(data=="work-tab1"){
         workSlider.style.top = "0";
       }
