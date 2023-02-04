@@ -419,6 +419,7 @@ header.dark{
   padding-top: 10px;
   opacity: 0;
   animation: rtl 0.5s linear both;
+  height: 310px;
 
 }
 .ui-items{

@@ -60,8 +60,8 @@ document.addEventListener('click', (e)=>{
     uiItems.forEach(element=> element.classList.remove('active'));
     const data = e.target.getAttribute('data-alt');
     document.getElementById(data).classList.add('active');
-    // console.log(getComputedStyle(uir).width);
-    if(getComputedStyle(ui).width < "769"){
+    console.log(ui.offsetWidth);
+    if(ui.offsetWidth< "769"){
       console.log(getComputedStyle(ui).width);
       if (data == 'tab4'){
         document.querySelector('.ui-contents').style.height = "750px";
@@ -70,10 +70,32 @@ document.addEventListener('click', (e)=>{
         document.querySelector('.ui-contents').style.height = "1100px";
       }
     }
-    else{}
-    
+    else{
+      // console.log("desktop");
+      document.querySelector('.ui-contents').style.height = "310px";
+    }
   }
 })
+
+// window.addEventListener('resize', () => {
+//   changeHeight();
+// })
+// function changeHeight(){
+//   console.log("1233");
+//   if(ui.offsetWidth< "769"){
+//     console.log(getComputedStyle(ui).width);
+//     if (data == 'tab4'){
+//       document.querySelector('.ui-contents').style.height = "750px";
+//     }
+//     else{
+//       document.querySelector('.ui-contents').style.height = "1100px";
+//     }
+//   }
+//   else{
+//     // console.log("desktop");
+//     document.querySelector('.ui-contents').style.height = "310px";
+//   }
+// }
 
 // Works Tab
 const work_tab = document.querySelectorAll('.btn p');
