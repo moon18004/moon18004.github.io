@@ -366,7 +366,6 @@ header.dark{
   padding-top: 80px;
   margin-bottom: 80px;
   font-size: 32px;
-
 }
 .ui__container h2 span{
   font-size: 24px;
@@ -421,7 +420,6 @@ header.dark{
   opacity: 0;
   animation: rtl 0.5s linear both;
   height: 310px;
-
 }
 .ui-items{
   position: absolute;
