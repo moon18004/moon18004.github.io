@@ -30,7 +30,7 @@ new TypeIt(".home__contents h2", {
   speed:80,
   startDelay: 900,
   loop:true
-}).type("A student majoring in software engineering at BYUI.", {delay: 1000})
+}).type("I am a software engineering graduate from BYU-Idaho", {delay: 1000})
   .delete(51, { delay: 1000})
   .type("I am currently dedicated to web development.", {delay:3000})
   .go();
