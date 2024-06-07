@@ -120,6 +120,9 @@ document.addEventListener('click', (e)=>{
       else if(data=="work-tab3"){
         workSlider.style.top = "-1280px";
       }
+      else if(data=="work-tab4"){
+        workSlider.style.top = "-1920px";
+      }
     }
     else{
       // console.log("width < 768")
@@ -131,6 +134,9 @@ document.addEventListener('click', (e)=>{
       }
       else if(data=="work-tab3"){
         workSlider.style.top = "-800px";
+      }
+      else if(data=="work-tab4"){
+        workSlider.style.top = "-1200px";
       }
     }
     

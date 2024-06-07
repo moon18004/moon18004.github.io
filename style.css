@@ -564,8 +564,10 @@ header.dark{
   /* overflow:auto; */
   overflow:visible;
   /* margin-bottom: 50px; */
+  
   height: 630px;
   margin-bottom: 10px;
+  /* */
 
 }
 .work {
@@ -579,6 +581,9 @@ header.dark{
   z-index: -1;
   position:relative;
   box-shadow: 0 0 2px gray;
+  object-fit: cover;
+  
+  height: 450px; 
   /* border: 2px solid var(--color-green); */
 }
 .works__item:first-child img:before{
@@ -1034,6 +1039,7 @@ footer{
   }
   .work img{
     width: 100%;
+    height: 200px;
   }
   .work h3{
     margin-bottom: 10px;
